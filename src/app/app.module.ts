@@ -9,6 +9,7 @@ import { CoreModule } from './core/core.module';
 import { NavComponent } from './core/navbar/nav.component';
 import { MaterialDesignModule } from './shared/material-design/material-design.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { RegisterModule } from './modules/register/register.module';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     CoreModule,
     MaterialDesignModule,
     LoginModule,
+    RegisterModule,
     HomeModule
   ],
   providers: [],

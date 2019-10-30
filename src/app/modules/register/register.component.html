@@ -8,22 +8,29 @@
                             <label for="username">Utilizator</label>
                             <input type="text" formControlName="username" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.username.errors }" />
                             <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
-                                <div *ngIf="f.username.errors.required">Username is required</div>
+                                <div *ngIf="f.username.errors.required">Utilizatorul este necesar</div>
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="password">Parola</label>
                             <input type="password" formControlName="password" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
                             <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
-                                <div *ngIf="f.password.errors.required">Password is required</div>
+                                <div *ngIf="f.password.errors.required">Parola este necesara</div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" formControlName="email" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.email.errors }" />
+                            <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                                <div *ngIf="f.email.errors.required">Email-ul este necesar</div>
                             </div>
                         </div>
                         <div class="form-group">
                             <button [disabled]="loading" class="btn btn-primary">
                                 <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
-                                Autentificare
+                                Inregistrare
                             </button>
-                            <a routerLink="/register" class="btn btn-link">Inregistrare</a>
+                            <!-- <a routerLink="/register" class="btn btn-link">Register</a> -->
                         </div>
                     </form>
                 </div>
