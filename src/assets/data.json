@@ -1,80 +1,81 @@
 {  
-    "Data":{
-        "users":[
-            {
-                "userid":1,
-                "userName":"aaldea",
-                "password":"1234",
-                "email":"alexandru.aldea@alliance-healthcare.ro",
-                "passwordExpiryDate": "",
-                "token":""
-            },
-            {
-                "userid":2,
-                "userName":"iolteanu",
-                "password":"4567",
-                "email":"iulian.olteanu@alliance-healthcare.ro",
-                "passwordExpiryDate": "",
-                "token":""
-            },
-            {
-                "userid":3,
-                "userName":"igurau",
-                "password":"9876",
-                "email":"gurau.ionut@alliance-healthcare.ro",
-                "passwordExpiryDate": "",
-                "token":""
-            }
-        ],
-        "documente":[
-            {
-                "documentId": 1,
-                "documentNumber": 372,
-                "documentDate": "2019-10-19",
-                "totalValue": 570.33,
-                "documentType": "decont",
-                "documentState": "valid"
-            },
-            {
-                "documentId": 2,
-                "documentNumber": 125,
-                "documentDate": "2019-09-03",
-                "totalValue": 70,
-                "documentType": "decont",
-                "documentState": "valid"
-            },
-            {
-                "documentId": 3,
-                "documentNumber": 444,
-                "documentDate": "2019-10-01",
-                "totalValue": 232.553,
-                "documentType": "decont",
-                "documentState": "valid"
-            },  
-            {
-                "documentId": 4,
-                "documentNumber": 763,
-                "documentDate": "2019-08-25",
-                "totalValue": 700,
-                "documentType": "avans",
-                "documentState": "valid"
-            },  
-            {
-                "documentId": 5,
-                "documentNumber": 991,
-                "documentDate": "2019-08-07",
-                "totalValue": 2000,
-                "documentType": "decont",
-                "documentState": "valid"
-            },  
-            {
-                "documentId": 6,
-                "documentNumber": 1002,
-                "documentDate": "2019-10-28",
-                "totalValue": 153.5634,
-                "documentType": "avans",
-                "documentState": "valid"
-            }
-        ]
-    }
+
+    "users":[
+        {
+            "userid":1,
+            "userName":"aaldea",
+            "password":"1234",
+            "email":"alexandru.aldea@alliance-healthcare.ro",
+            "passwordExpiryDate": "",
+            "token":""
+        },
+        {
+            "userid":2,
+            "userName":"iolteanu",
+            "password":"4567",
+            "email":"iulian.olteanu@alliance-healthcare.ro",
+            "passwordExpiryDate": "",
+            "token":""
+        },
+        {
+            "userid":3,
+            "userName":"igurau",
+            "password":"9876",
+            "email":"gurau.ionut@alliance-healthcare.ro",
+            "passwordExpiryDate": "",
+            "token":""
+        }
+    ],
+    
+    "documente":[
+        {
+            "documentId": 1,
+            "documentNumber": 372,
+            "documentDate": "2019-10-19",
+            "totalValue": 570.33,
+            "documentType": "decont",
+            "documentState": "valid"
+        },
+        {
+            "documentId": 2,
+            "documentNumber": 125,
+            "documentDate": "2019-09-03",
+            "totalValue": 70,
+            "documentType": "decont",
+            "documentState": "valid"
+        },
+        {
+            "documentId": 3,
+            "documentNumber": 444,
+            "documentDate": "2019-10-01",
+            "totalValue": 232.553,
+            "documentType": "decont",
+            "documentState": "valid"
+        },  
+        {
+            "documentId": 4,
+            "documentNumber": 763,
+            "documentDate": "2019-08-25",
+            "totalValue": 700,
+            "documentType": "avans",
+            "documentState": "valid"
+        },  
+        {
+            "documentId": 5,
+            "documentNumber": 991,
+            "documentDate": "2019-08-07",
+            "totalValue": 2000,
+            "documentType": "decont",
+            "documentState": "valid"
+        },  
+        {
+            "documentId": 6,
+            "documentNumber": 1002,
+            "documentDate": "2019-10-28",
+            "totalValue": 153.5634,
+            "documentType": "avans",
+            "documentState": "valid"
+        }
+    ]
+
 }

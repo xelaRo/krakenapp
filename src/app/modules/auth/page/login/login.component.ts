@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { UserModel } from '../../models/user';
+import { UserModel } from '../../../../models/user';
 import { ActivatedRoute, Router } from '@angular/router';
-import { DummyService } from 'src/app/core/services/dummy.service';
+import { Errors } from 'src/app/models/error';
+import { UserService } from 'src/app/core/services/user.service';
 
 @Component({
   selector: 'app-login',
@@ -16,12 +17,13 @@ loginForm: FormGroup;
 loading = false;
 submitted = false;
 returnUrl: string;
+errors: Errors = {errors: {}};
 
   constructor( 
     private formBuilder: FormBuilder,
     private route: ActivatedRoute,
     private router: Router,
-    private storage: DummyService) {   
+    private userSerivce: UserService) {   
       // redirect to home if already logged in
       // if (this.authenticationService.currentUserValue) {
       //     this.router.navigate(['/']);
@@ -43,24 +45,21 @@ returnUrl: string;
   onSubmit(){
     this.submitted = true;
 
-
-       // stop here if form is invalid
-       if (this.loginForm.invalid) {
-        return;
-    }
-    
-    var user: UserModel ={
-      userId: 1,
-      userName: "aaldea",
-      password: "1234",
-      email: "alexandru.aldea@allience-healthcare.ro",
-      passwordExpiryDate: new Date(),
-      token: "123231sadad12a"
+    // stop here if form is invalid
+    if (this.loginForm.invalid) {
+      return;
     }
 
-    this.storage.addUser(user)
-    this.loading = true;
+    this.userSerivce
+    .attemptLogin(this.loginForm.value)
+    .subscribe(
+      data => {
+        console.log(data),
+        this.router.navigate(['/home'])},
+      err => {
+          this.errors = err;
+      });
 
-    this.router.navigate(['/home']);
+    //this.loading = true;
   }
 }

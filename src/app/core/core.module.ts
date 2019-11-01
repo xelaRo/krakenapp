@@ -1,16 +1,18 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { NavComponent } from './navbar/nav.component';
-import { DummyService } from './services/dummy.service';
-import { StorageServiceModule } from 'ngx-webstorage-service';
+import { LocalApiService } from './services/local-api.service';
+import { HttpClientModule } from '@angular/common/http';
+import { UserService } from './services/user.service';
 
 @NgModule({
   declarations: [],
   imports: [
-    CommonModule, StorageServiceModule 
+    CommonModule,
+    HttpClientModule 
   ],
   providers:[
-    DummyService
+    LocalApiService,
+    UserService
   ]
 })
 export class CoreModule { }

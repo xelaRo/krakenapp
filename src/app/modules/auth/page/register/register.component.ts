@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { UserModel } from 'src/app/models/user';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
-import { DummyService } from 'src/app/core/services/dummy.service';
 
 @Component({
   selector: 'app-register',
@@ -21,8 +20,7 @@ returnUrl: string;
   constructor(
     private formBuilder: FormBuilder,
     private route: ActivatedRoute,
-    private router: Router,
-    private storage: DummyService) { }
+    private router: Router) { }
 
   ngOnInit() {
     this.loginForm = this.formBuilder.group({
@@ -38,22 +36,21 @@ returnUrl: string;
   onSubmit(){
     this.submitted = true;
 
-
-       // stop here if form is invalid
-       if (this.loginForm.invalid) {
-        return;
+    // stop here if form is invalid
+    if (this.loginForm.invalid) {
+      return;
     }
     
-    var user: UserModel ={
-      userId: 1,
-      userName: "aaldea",
-      password: "1234",
-      email: "alexandru.aldea@allience-healthcare.ro",
-      passwordExpiryDate: new Date(),
-      token: "123231sadad12a"
-    }
+    // var user: UserModel ={
+    //   userId: 1,
+    //   userName: "aaldea",
+    //   password: "1234",
+    //   email: "alexandru.aldea@allience-healthcare.ro",
+    //   passwordExpiryDate: new Date(),
+    //   token: "123231sadad12a"
+    // }
 
-    this.storage.addUser(user)
+    // this.storage.addUser(user)
     this.loading = true;
 
     this.router.navigate(['/home']);
