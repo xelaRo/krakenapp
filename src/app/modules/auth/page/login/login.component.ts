@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { UserModel } from '../../../../models/user';
+import { UserModel } from '../../../../shared/models/user';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Errors } from 'src/app/models/error';
+import { Errors } from 'src/app/shared/models/error';
 import { UserService } from 'src/app/core/services/user.service';
+
 
 @Component({
   selector: 'app-login',
@@ -19,16 +20,15 @@ submitted = false;
 returnUrl: string;
 errors: Errors = {errors: {}};
 
-  constructor( 
+  constructor(
     private formBuilder: FormBuilder,
     private route: ActivatedRoute,
     private router: Router,
-    private userSerivce: UserService) {   
+    private userSerivce: UserService) {}
       // redirect to home if already logged in
       // if (this.authenticationService.currentUserValue) {
       //     this.router.navigate(['/']);
       // }
-    }
 
   ngOnInit() {
     this.loginForm = this.formBuilder.group({
@@ -42,7 +42,7 @@ errors: Errors = {errors: {}};
    // convenience getter for easy access to form fields
    get f() { return this.loginForm.controls; }
 
-  onSubmit(){
+  onSubmit() {
     this.submitted = true;
 
     // stop here if form is invalid
@@ -50,16 +50,9 @@ errors: Errors = {errors: {}};
       return;
     }
 
-    this.userSerivce
-    .attemptLogin(this.loginForm.value)
-    .subscribe(
-      data => {
-        console.log(data),
-        this.router.navigate(['/home'])},
-      err => {
-          this.errors = err;
-      });
+    this.userSerivce.getUsers();
 
-    //this.loading = true;
+    this.userSerivce.findUser(this.loginForm.value.username);
+    // this.loading = true;
   }
 }
